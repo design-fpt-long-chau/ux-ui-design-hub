@@ -1,0 +1,53 @@
+.tag {
+  --tag-background: #f1f5f9;
+  --tag-foreground: #475569;
+  --tag-dark-background: #263449;
+  --tag-dark-foreground: #cbd5e1;
+  display: inline-block;
+  max-width: 100%;
+  padding: 3px 7px;
+  border-radius: 4px;
+  background: var(--tag-background);
+  color: var(--tag-foreground);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.pharmacy {
+  --tag-background: #eff6ff;
+  --tag-foreground: #1d4ed8;
+  --tag-dark-background: #173456;
+  --tag-dark-foreground: #93c5fd;
+}
+
+.vaccination {
+  --tag-background: #f0fdfa;
+  --tag-foreground: #0f766e;
+  --tag-dark-background: #123b39;
+  --tag-dark-foreground: #99f6e4;
+}
+
+.testing {
+  --tag-background: #f5f3ff;
+  --tag-foreground: #6d28d9;
+  --tag-dark-background: #31244b;
+  --tag-dark-foreground: #c4b5fd;
+}
+
+.motherBaby {
+  --tag-background: #fff7ed;
+  --tag-foreground: #9a3412;
+  --tag-dark-background: #452b1e;
+  --tag-dark-foreground: #fdba74;
+}
+
+:global([data-theme="dark"]) .tag,
+.tag.dark {
+  background: var(--tag-dark-background);
+  color: var(--tag-dark-foreground);
+}

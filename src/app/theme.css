@@ -1,0 +1,473 @@
+/* Central semantic palette plus compatibility mapping for existing utilities.
+   Shared semantic states support both palettes, including legacy utilities. */
+:root { color-scheme: light; }
+.theme-moon { display: none; }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #0b1220;
+  --foreground: #edf2f9;
+  --surface: #142033;
+  --surface-muted: #1c2b42;
+  --surface-hover: #263a55;
+  --text-primary: #edf2f9;
+  --text-secondary: #c4d1e3;
+  --text-muted: #a5b5cc;
+  --border: #40536d;
+  --accent-text: #93c5fd;
+  --accent-surface: #173456;
+  --danger-text: #fca5a5;
+  --danger-surface: #482332;
+  --success-text: #8edbc2;
+  --success-surface: #163b35;
+  --warning-text: #fcd34d;
+  --warning-surface: #42351e;
+  --field-border: var(--border);
+  --field-focus: var(--accent-text);
+  --field-error: var(--danger-text);
+}
+:root[data-theme="dark"] .theme-sun { display: none; }
+:root[data-theme="dark"] .theme-moon { display: block; }
+:root[data-theme="dark"] [class~="bg-[#f7f8fa]"] { background-color: var(--background); }
+:root[data-theme="dark"] [class~="border-slate-200"],
+:root[data-theme="dark"] [class~="hover:border-slate-300"]:hover,
+:root[data-theme="dark"] [class~="border-slate-300"],
+:root[data-theme="dark"] [class~="border-slate-100"],
+:root[data-theme="dark"] [class~="hover:border-slate-400"]:hover,
+:root[data-theme="dark"] [class~="border-slate-200/80"],
+:root[data-theme="dark"] [class~="border-white/10"],
+:root[data-theme="dark"] [class~="border-slate-700"],
+:root[data-theme="dark"] [class~="border-slate-400"] { border-color: var(--border); }
+:root[data-theme="dark"] [class~="bg-white"],
+:root[data-theme="dark"] [class~="hover:bg-slate-50"]:hover,
+:root[data-theme="dark"] [class~="bg-white/40"],
+:root[data-theme="dark"] [class~="disabled:bg-slate-50"]:disabled,
+:root[data-theme="dark"] [class~="bg-white/5"],
+:root[data-theme="dark"] [class~="hover:bg-white/10"]:hover,
+:root[data-theme="dark"] [class~="bg-white/10"],
+:root[data-theme="dark"] [class~="hover:bg-white/5"]:hover,
+:root[data-theme="dark"] [class~="bg-white/90"],
+:root[data-theme="dark"] [class~="bg-slate-50"],
+:root[data-theme="dark"] [class~="bg-slate-50/60"],
+:root[data-theme="dark"] [class~="bg-slate-50/70"],
+:root[data-theme="dark"] [class~="bg-slate-50/80"],
+:root[data-theme="dark"] [class~="hover:bg-white"]:hover,
+:root[data-theme="dark"] [class~="bg-white/95"],
+:root[data-theme="dark"] [class~="hover:bg-slate-50/70"]:hover,
+:root[data-theme="dark"] [class~="bg-white/60"] { background-color: var(--surface); }
+:root[data-theme="dark"] [class~="text-slate-50"],
+:root[data-theme="dark"] [class~="text-slate-400"],
+:root[data-theme="dark"] [class~="text-slate-300"],
+:root[data-theme="dark"] [class~="disabled:text-slate-50"]:disabled,
+:root[data-theme="dark"] [class~="text-slate-100"],
+:root[data-theme="dark"] [class~="text-slate-200"],
+:root[data-theme="dark"] [class~="hover:text-slate-200"]:hover { color: var(--text-muted); }
+:root[data-theme="dark"] [class~="text-blue-700"],
+:root[data-theme="dark"] [class~="hover:text-blue-700"]:hover,
+:root[data-theme="dark"] [class~="focus-visible:text-blue-700"]:focus-visible,
+:root[data-theme="dark"] .group:hover [class~="group-hover:text-blue-700"],
+:root[data-theme="dark"] [class~="hover:text-blue-800"]:hover,
+:root[data-theme="dark"] [class~="text-blue-800"],
+:root[data-theme="dark"] [class~="text-blue-900"],
+:root[data-theme="dark"] [class~="text-blue-600"],
+:root[data-theme="dark"] [class~="text-blue-50"],
+:root[data-theme="dark"] .group:hover [class~="group-hover:text-blue-300"],
+:root[data-theme="dark"] [class~="text-blue-200"],
+:root[data-theme="dark"] [class~="text-blue-300"] { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="text-slate-950"],
+:root[data-theme="dark"] [class~="text-slate-700"],
+:root[data-theme="dark"] [class~="text-slate-800"],
+:root[data-theme="dark"] [class~="text-slate-900"],
+:root[data-theme="dark"] [class~="hover:text-slate-700"]:hover,
+:root[data-theme="dark"] [class~="hover:text-slate-900"]:hover,
+:root[data-theme="dark"] [class~="hover:text-slate-950"]:hover { color: var(--text-primary); }
+:root[data-theme="dark"] [class~="text-slate-600"] { color: var(--text-secondary); }
+:root[data-theme="dark"] [class~="hover:border-blue-300"]:hover,
+:root[data-theme="dark"] [class~="border-blue-300"],
+:root[data-theme="dark"] [class~="focus:border-blue-50"]:focus,
+:root[data-theme="dark"] [class~="border-blue-200"],
+:root[data-theme="dark"] [class~="hover:border-blue-200"]:hover,
+:root[data-theme="dark"] [class~="border-blue-50"],
+:root[data-theme="dark"] .group:hover [class~="group-hover:border-blue-50"],
+:root[data-theme="dark"] [class~="focus-visible:border-blue-50"]:focus-visible { border-color: var(--accent-border); }
+:root[data-theme="dark"] [class~="border-blue-600"],
+:root[data-theme="dark"] [class~="border-blue-400"],
+:root[data-theme="dark"] [class~="border-blue-700"],
+:root[data-theme="dark"] [class~="hover:border-blue-400"]:hover,
+:root[data-theme="dark"] .group:hover [class~="group-hover:border-blue-400"],
+:root[data-theme="dark"] [class~="border-blue-400/20"] { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="bg-slate-300"] { background-color: var(--surface-hover); }
+:root[data-theme="dark"] [class~="bg-slate-100/70"],
+:root[data-theme="dark"] [class~="hover:bg-slate-100"]:hover,
+:root[data-theme="dark"] [class~="bg-slate-200"],
+:root[data-theme="dark"] [class~="bg-slate-100"],
+:root[data-theme="dark"] [class~="bg-slate-100/60"],
+:root[data-theme="dark"] [class~="hover:bg-slate-200"]:hover,
+:root[data-theme="dark"] [class~="hover:bg-slate-100/70"]:hover { background-color: var(--surface-muted); }
+:root[data-theme="dark"] [class~="hover:bg-blue-50"]:hover,
+:root[data-theme="dark"] [class~="bg-blue-50"],
+:root[data-theme="dark"] [class~="focus-visible:bg-blue-50"]:focus-visible,
+:root[data-theme="dark"] [class~="bg-blue-50/80"],
+:root[data-theme="dark"] [class~="bg-blue-50/40"],
+:root[data-theme="dark"] [class~="focus:bg-blue-50"]:focus,
+:root[data-theme="dark"] [class~="bg-blue-50/92"],
+:root[data-theme="dark"] [class~="bg-blue-50/60"],
+:root[data-theme="dark"] [class~="bg-blue-50/90"],
+:root[data-theme="dark"] [class~="hover:bg-blue-50/40"]:hover,
+:root[data-theme="dark"] [class~="bg-blue-100"],
+:root[data-theme="dark"] [class~="hover:bg-blue-100"]:hover,
+:root[data-theme="dark"] [class~="hover:bg-blue-50/60"]:hover { background-color: var(--accent-surface); }
+:root[data-theme="dark"] [class~="focus-visible:ring-blue-50"]:focus-visible,
+:root[data-theme="dark"] [class~="focus:ring-blue-50"]:focus,
+:root[data-theme="dark"] [class~="focus-visible:ring-blue-600"]:focus-visible,
+:root[data-theme="dark"] .group:hover [class~="group-hover:ring-blue-50"],
+:root[data-theme="dark"] .group:hover [class~="group-hover:ring-blue-300"] { --tw-ring-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="hover:bg-red-50"]:hover,
+:root[data-theme="dark"] [class~="focus-visible:bg-red-50"]:focus-visible,
+:root[data-theme="dark"] [class~="bg-red-50"] { background-color: var(--danger-surface); }
+:root[data-theme="dark"] [class~="hover:text-red-600"]:hover,
+:root[data-theme="dark"] [class~="focus-visible:text-red-600"]:focus-visible,
+:root[data-theme="dark"] [class~="text-red-600"],
+:root[data-theme="dark"] [class~="text-red-700"] { color: var(--danger-text); }
+:root[data-theme="dark"] [class~="ring-white"] { --tw-ring-color: var(--surface); }
+:root[data-theme="dark"] [class~="bg-emerald-50"],
+:root[data-theme="dark"] [class~="bg-emerald-50/50"] { background-color: var(--success-surface); }
+:root[data-theme="dark"] [class~="text-emerald-700"],
+:root[data-theme="dark"] [class~="text-emerald-600"],
+:root[data-theme="dark"] [class~="text-emerald-400"],
+:root[data-theme="dark"] [class~="text-emerald-200"] { color: var(--success-text); }
+:root[data-theme="dark"] [class~="border-red-50"],
+:root[data-theme="dark"] [class~="border-red-200"] { border-color: var(--danger-border); }
+:root[data-theme="dark"] [class~="border-emerald-200"] { border-color: var(--success-border); }
+:root[data-theme="dark"] [class~="border-amber-200"] { border-color: var(--warning-border); }
+:root[data-theme="dark"] [class~="bg-amber-50/50"],
+:root[data-theme="dark"] [class~="bg-amber-50/70"],
+:root[data-theme="dark"] [class~="bg-amber-50"] { background-color: var(--warning-surface); }
+:root[data-theme="dark"] [class~="text-amber-800"],
+:root[data-theme="dark"] [class~="text-amber-700"],
+:root[data-theme="dark"] [class~="text-amber-200/80"] { color: var(--warning-text); }
+:root[data-theme="dark"] [class~="ring-slate-200"] { --tw-ring-color: var(--border); }
+:root[data-theme="dark"] [class~="border-emerald-400/20"] { border-color: var(--success-text); }
+
+:root[data-theme="dark"] :is(input, textarea, select) { color: var(--text-primary); }
+:root[data-theme="dark"] :is(input, textarea, select):not([type="checkbox"], [type="radio"], [type="file"], [type="range"], [type="hidden"]) { background-color: var(--surface); }
+:root[data-theme="dark"] .form-control-frame > input { background-color: transparent; }
+:root[data-theme="dark"] ::placeholder { color: var(--text-muted); opacity: 1; }
+:root[data-theme="dark"] :is(input, select, textarea, .form-control):disabled,
+:root[data-theme="dark"] .form-control-frame[data-disabled="true"] { background-color: var(--surface-muted); color: var(--text-muted); }
+:root[data-theme="dark"] :is(.add-screen-dialog, .add-screen-group-panel) { color: var(--text-primary); }
+:root[data-theme="dark"] :is(.flow-position-tooltip, .flow-detail-overlay span, .screen-peek-label, .flow-screen-card[data-selected="true"]) { background: var(--surface); color: var(--text-primary); border-color: var(--border); }
+:root[data-theme="dark"] .flow-position-tooltip strong { color: var(--text-primary); }
+:root[data-theme="dark"] .flow-position-tooltip span { color: var(--text-muted); }
+:root[data-theme="dark"] .flow-position-navigator { border-color: var(--border); }
+:root[data-theme="dark"] .flow-position-track::before { background: var(--border); }
+:root[data-theme="dark"] .subgroup-action-motion button:is(:hover, :focus-visible),
+:root[data-theme="dark"] .form-control-frame > button:focus-visible { background: var(--accent-surface); }
+:root[data-theme="dark"] a:focus-visible, :root[data-theme="dark"] button:focus-visible { outline-color: var(--accent-text); }
+:root[data-theme="dark"] .flow-card-delete:focus-visible { outline-color: var(--danger-text); }
+:root[data-theme="dark"] ::selection { background: var(--accent-surface); color: var(--text-primary); }
+
+/* Midtone utilities retain readable text and control contrast. */
+:root[data-theme="dark"] [class~="text-slate-500"] { color: var(--text-muted); }
+:root[data-theme="dark"] [class~="hover:text-slate-500"]:hover { color: var(--text-muted); }
+:root[data-theme="dark"] [class~="focus:text-slate-500"]:focus { color: var(--text-muted); }
+:root[data-theme="dark"] [class~="focus-visible:text-slate-500"]:focus-visible { color: var(--text-muted); }
+:root[data-theme="dark"] [class~="disabled:text-slate-500"]:disabled { color: var(--text-muted); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:text-slate-500"] { color: var(--text-muted); }
+:root[data-theme="dark"] [class~="border-slate-500"] { border-color: var(--border); }
+:root[data-theme="dark"] [class~="hover:border-slate-500"]:hover { border-color: var(--border); }
+:root[data-theme="dark"] [class~="focus:border-slate-500"]:focus { border-color: var(--border); }
+:root[data-theme="dark"] [class~="focus-visible:border-slate-500"]:focus-visible { border-color: var(--border); }
+:root[data-theme="dark"] [class~="disabled:border-slate-500"]:disabled { border-color: var(--border); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:border-slate-500"] { border-color: var(--border); }
+:root[data-theme="dark"] [class~="text-gray-500"] { color: var(--text-muted); }
+:root[data-theme="dark"] [class~="hover:text-gray-500"]:hover { color: var(--text-muted); }
+:root[data-theme="dark"] [class~="focus:text-gray-500"]:focus { color: var(--text-muted); }
+:root[data-theme="dark"] [class~="focus-visible:text-gray-500"]:focus-visible { color: var(--text-muted); }
+:root[data-theme="dark"] [class~="disabled:text-gray-500"]:disabled { color: var(--text-muted); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:text-gray-500"] { color: var(--text-muted); }
+:root[data-theme="dark"] [class~="border-gray-500"] { border-color: var(--border); }
+:root[data-theme="dark"] [class~="hover:border-gray-500"]:hover { border-color: var(--border); }
+:root[data-theme="dark"] [class~="focus:border-gray-500"]:focus { border-color: var(--border); }
+:root[data-theme="dark"] [class~="focus-visible:border-gray-500"]:focus-visible { border-color: var(--border); }
+:root[data-theme="dark"] [class~="disabled:border-gray-500"]:disabled { border-color: var(--border); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:border-gray-500"] { border-color: var(--border); }
+:root[data-theme="dark"] [class~="text-blue-500"] { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="hover:text-blue-500"]:hover { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="focus:text-blue-500"]:focus { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="focus-visible:text-blue-500"]:focus-visible { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="disabled:text-blue-500"]:disabled { color: var(--accent-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:text-blue-500"] { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="border-blue-500"] { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="hover:border-blue-500"]:hover { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="focus:border-blue-500"]:focus { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="focus-visible:border-blue-500"]:focus-visible { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="disabled:border-blue-500"]:disabled { border-color: var(--accent-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:border-blue-500"] { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="text-red-500"] { color: var(--danger-text); }
+:root[data-theme="dark"] [class~="hover:text-red-500"]:hover { color: var(--danger-text); }
+:root[data-theme="dark"] [class~="focus:text-red-500"]:focus { color: var(--danger-text); }
+:root[data-theme="dark"] [class~="focus-visible:text-red-500"]:focus-visible { color: var(--danger-text); }
+:root[data-theme="dark"] [class~="disabled:text-red-500"]:disabled { color: var(--danger-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:text-red-500"] { color: var(--danger-text); }
+:root[data-theme="dark"] [class~="border-red-500"] { border-color: var(--danger-text); }
+:root[data-theme="dark"] [class~="hover:border-red-500"]:hover { border-color: var(--danger-text); }
+:root[data-theme="dark"] [class~="focus:border-red-500"]:focus { border-color: var(--danger-text); }
+:root[data-theme="dark"] [class~="focus-visible:border-red-500"]:focus-visible { border-color: var(--danger-text); }
+:root[data-theme="dark"] [class~="disabled:border-red-500"]:disabled { border-color: var(--danger-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:border-red-500"] { border-color: var(--danger-text); }
+:root[data-theme="dark"] [class~="text-rose-500"] { color: var(--danger-text); }
+:root[data-theme="dark"] [class~="hover:text-rose-500"]:hover { color: var(--danger-text); }
+:root[data-theme="dark"] [class~="focus:text-rose-500"]:focus { color: var(--danger-text); }
+:root[data-theme="dark"] [class~="focus-visible:text-rose-500"]:focus-visible { color: var(--danger-text); }
+:root[data-theme="dark"] [class~="disabled:text-rose-500"]:disabled { color: var(--danger-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:text-rose-500"] { color: var(--danger-text); }
+:root[data-theme="dark"] [class~="border-rose-500"] { border-color: var(--danger-text); }
+:root[data-theme="dark"] [class~="hover:border-rose-500"]:hover { border-color: var(--danger-text); }
+:root[data-theme="dark"] [class~="focus:border-rose-500"]:focus { border-color: var(--danger-text); }
+:root[data-theme="dark"] [class~="focus-visible:border-rose-500"]:focus-visible { border-color: var(--danger-text); }
+:root[data-theme="dark"] [class~="disabled:border-rose-500"]:disabled { border-color: var(--danger-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:border-rose-500"] { border-color: var(--danger-text); }
+:root[data-theme="dark"] [class~="text-amber-500"] { color: var(--warning-text); }
+:root[data-theme="dark"] [class~="hover:text-amber-500"]:hover { color: var(--warning-text); }
+:root[data-theme="dark"] [class~="focus:text-amber-500"]:focus { color: var(--warning-text); }
+:root[data-theme="dark"] [class~="focus-visible:text-amber-500"]:focus-visible { color: var(--warning-text); }
+:root[data-theme="dark"] [class~="disabled:text-amber-500"]:disabled { color: var(--warning-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:text-amber-500"] { color: var(--warning-text); }
+:root[data-theme="dark"] [class~="border-amber-500"] { border-color: var(--warning-text); }
+:root[data-theme="dark"] [class~="hover:border-amber-500"]:hover { border-color: var(--warning-text); }
+:root[data-theme="dark"] [class~="focus:border-amber-500"]:focus { border-color: var(--warning-text); }
+:root[data-theme="dark"] [class~="focus-visible:border-amber-500"]:focus-visible { border-color: var(--warning-text); }
+:root[data-theme="dark"] [class~="disabled:border-amber-500"]:disabled { border-color: var(--warning-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:border-amber-500"] { border-color: var(--warning-text); }
+:root[data-theme="dark"] [class~="text-yellow-500"] { color: var(--warning-text); }
+:root[data-theme="dark"] [class~="hover:text-yellow-500"]:hover { color: var(--warning-text); }
+:root[data-theme="dark"] [class~="focus:text-yellow-500"]:focus { color: var(--warning-text); }
+:root[data-theme="dark"] [class~="focus-visible:text-yellow-500"]:focus-visible { color: var(--warning-text); }
+:root[data-theme="dark"] [class~="disabled:text-yellow-500"]:disabled { color: var(--warning-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:text-yellow-500"] { color: var(--warning-text); }
+:root[data-theme="dark"] [class~="border-yellow-500"] { border-color: var(--warning-text); }
+:root[data-theme="dark"] [class~="hover:border-yellow-500"]:hover { border-color: var(--warning-text); }
+:root[data-theme="dark"] [class~="focus:border-yellow-500"]:focus { border-color: var(--warning-text); }
+:root[data-theme="dark"] [class~="focus-visible:border-yellow-500"]:focus-visible { border-color: var(--warning-text); }
+:root[data-theme="dark"] [class~="disabled:border-yellow-500"]:disabled { border-color: var(--warning-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:border-yellow-500"] { border-color: var(--warning-text); }
+:root[data-theme="dark"] [class~="text-emerald-500"] { color: var(--success-text); }
+:root[data-theme="dark"] [class~="hover:text-emerald-500"]:hover { color: var(--success-text); }
+:root[data-theme="dark"] [class~="focus:text-emerald-500"]:focus { color: var(--success-text); }
+:root[data-theme="dark"] [class~="focus-visible:text-emerald-500"]:focus-visible { color: var(--success-text); }
+:root[data-theme="dark"] [class~="disabled:text-emerald-500"]:disabled { color: var(--success-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:text-emerald-500"] { color: var(--success-text); }
+:root[data-theme="dark"] [class~="border-emerald-500"] { border-color: var(--success-text); }
+:root[data-theme="dark"] [class~="hover:border-emerald-500"]:hover { border-color: var(--success-text); }
+:root[data-theme="dark"] [class~="focus:border-emerald-500"]:focus { border-color: var(--success-text); }
+:root[data-theme="dark"] [class~="focus-visible:border-emerald-500"]:focus-visible { border-color: var(--success-text); }
+:root[data-theme="dark"] [class~="disabled:border-emerald-500"]:disabled { border-color: var(--success-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:border-emerald-500"] { border-color: var(--success-text); }
+:root[data-theme="dark"] [class~="text-green-500"] { color: var(--success-text); }
+:root[data-theme="dark"] [class~="hover:text-green-500"]:hover { color: var(--success-text); }
+:root[data-theme="dark"] [class~="focus:text-green-500"]:focus { color: var(--success-text); }
+:root[data-theme="dark"] [class~="focus-visible:text-green-500"]:focus-visible { color: var(--success-text); }
+:root[data-theme="dark"] [class~="disabled:text-green-500"]:disabled { color: var(--success-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:text-green-500"] { color: var(--success-text); }
+:root[data-theme="dark"] [class~="border-green-500"] { border-color: var(--success-text); }
+:root[data-theme="dark"] [class~="hover:border-green-500"]:hover { border-color: var(--success-text); }
+:root[data-theme="dark"] [class~="focus:border-green-500"]:focus { border-color: var(--success-text); }
+:root[data-theme="dark"] [class~="focus-visible:border-green-500"]:focus-visible { border-color: var(--success-text); }
+:root[data-theme="dark"] [class~="disabled:border-green-500"]:disabled { border-color: var(--success-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:border-green-500"] { border-color: var(--success-text); }
+:root[data-theme="dark"] [class~="text-cyan-500"] { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="hover:text-cyan-500"]:hover { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="focus:text-cyan-500"]:focus { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="focus-visible:text-cyan-500"]:focus-visible { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="disabled:text-cyan-500"]:disabled { color: var(--accent-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:text-cyan-500"] { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="border-cyan-500"] { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="hover:border-cyan-500"]:hover { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="focus:border-cyan-500"]:focus { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="focus-visible:border-cyan-500"]:focus-visible { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="disabled:border-cyan-500"]:disabled { border-color: var(--accent-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:border-cyan-500"] { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="text-indigo-500"] { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="hover:text-indigo-500"]:hover { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="focus:text-indigo-500"]:focus { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="focus-visible:text-indigo-500"]:focus-visible { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="disabled:text-indigo-500"]:disabled { color: var(--accent-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:text-indigo-500"] { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="border-indigo-500"] { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="hover:border-indigo-500"]:hover { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="focus:border-indigo-500"]:focus { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="focus-visible:border-indigo-500"]:focus-visible { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="disabled:border-indigo-500"]:disabled { border-color: var(--accent-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:border-indigo-500"] { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="text-violet-500"] { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="hover:text-violet-500"]:hover { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="focus:text-violet-500"]:focus { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="focus-visible:text-violet-500"]:focus-visible { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="disabled:text-violet-500"]:disabled { color: var(--accent-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:text-violet-500"] { color: var(--accent-text); }
+:root[data-theme="dark"] [class~="border-violet-500"] { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="hover:border-violet-500"]:hover { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="focus:border-violet-500"]:focus { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="focus-visible:border-violet-500"]:focus-visible { border-color: var(--accent-text); }
+:root[data-theme="dark"] [class~="disabled:border-violet-500"]:disabled { border-color: var(--accent-text); }
+:root[data-theme="dark"] .group:hover [class~="group-hover:border-violet-500"] { border-color: var(--accent-text); }
+
+:root[data-theme="dark"] .segmented-control { background: var(--surface-muted); border-color: var(--border); }
+:root[data-theme="dark"] .segmented-control a { color: var(--text-secondary); }
+:root[data-theme="dark"] .segmented-control a[aria-current="page"], :root[data-theme="dark"] .screen-peek-label strong { color: var(--accent-text); }
+:root[data-theme="dark"] .segmented-indicator { background: var(--accent-surface); border-color: var(--border); }
+:root[data-theme="dark"] .skeleton { background-image: linear-gradient(90deg,var(--surface-muted) 25%,var(--surface-hover) 50%,var(--surface-muted) 75%); }
+
+/* Semantic control states take precedence over legacy utility borders. */
+:root[data-theme="dark"] :is(input, select, textarea, .form-control, .form-control-frame):is(:focus, :focus-within) { border-color: var(--field-focus); }
+:root[data-theme="dark"] :is(input, select, textarea, .form-control, .form-control-frame):is([aria-invalid="true"], [data-invalid="true"]) { border-color: var(--field-error); }
+:root[data-theme="dark"] .form-control-frame > input:is(:hover, :focus, :focus-visible, [aria-invalid="true"]) { border: 0; outline: none; box-shadow: none; }
+:root[data-theme="dark"] :is(.annotation-tooltip, .annotation-popover) { background: var(--surface); color: var(--text-primary); border-color: var(--border); }
+:root[data-theme="dark"] .annotation-tooltip small { color: var(--accent-text); }
+:root[data-theme="dark"] .variant-section { border-color: var(--border); }
+
+
+/* Shared semantic surfaces: never inherit a light pastel in Dark mode. */
+:root:not([data-theme="dark"]) {
+  --surface: #ffffff;
+  --surface-muted: #f1f5f9;
+  --surface-hover: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #52647a;
+  --border: #cbd5e1;
+  --accent-text: #1d4ed8;
+  --accent-surface: #eff6ff;
+  --accent-border: #93b4e8;
+  --success-text: #16634b;
+  --success-surface: #ecfdf5;
+  --success-border: #98cbb7;
+  --warning-text: #854d0e;
+  --warning-surface: #fffbeb;
+  --warning-border: #d9b66f;
+  --danger-text: #b91c1c;
+  --danger-surface: #fef2f2;
+  --danger-border: #e5a3a3;
+  --disabled-surface: #e2e8f0;
+  --disabled-text: #52647a;
+}
+:root[data-theme="dark"] {
+  --accent-border: #426d9c;
+  --success-border: #37685c;
+  --warning-border: #75613a;
+  --danger-border: #855363;
+  --disabled-surface: #263247;
+  --disabled-text: #a5b5cc;
+}
+:root .semantic-success-surface { background-color: var(--success-surface); }
+:root .semantic-success-border { border-color: var(--success-border); }
+:root .semantic-success-text { color: var(--success-text); }
+:root .semantic-success-dot { background-color: var(--success-text); }
+:root .semantic-success-badge { background-color: var(--success-surface); color: var(--success-text); border-color: var(--success-border); }
+:root:not([data-theme="dark"]) :is([class~="text-slate-400"], [class~="text-slate-500"]) { color: var(--text-muted); }
+:root[data-theme="dark"] [class~="focus-visible:bg-slate-100"]:focus-visible { background-color: var(--surface-hover); }
+/* Disabled controls keep legible labels; opacity must not compound with muted text. */
+:root :is(button, input, select, textarea):disabled {
+  opacity: 1;
+  color: var(--disabled-text);
+  background-color: var(--disabled-surface);
+  border-color: var(--border);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+:root [class~="bg-emerald-50"],
+:root [class~="bg-emerald-50/40"],
+:root [class~="bg-emerald-50/50"],
+:root [class~="bg-emerald-50/60"],
+:root [class~="bg-emerald-50/70"],
+:root [class~="bg-emerald-50/80"],
+:root [class~="bg-emerald-50/90"],
+:root [class~="bg-emerald-100"],
+:root [class~="bg-emerald-100/40"],
+:root [class~="bg-emerald-100/50"],
+:root [class~="bg-emerald-100/60"],
+:root [class~="bg-emerald-100/70"],
+:root [class~="bg-emerald-100/80"],
+:root [class~="bg-emerald-100/90"] { background-color: var(--success-surface); }
+
+:root [class~="border-emerald-100"],
+:root [class~="border-emerald-200"],
+:root [class~="border-emerald-300"] { border-color: var(--success-border); }
+
+:root [class~="text-emerald-600"],
+:root [class~="text-emerald-700"],
+:root [class~="text-emerald-800"],
+:root [class~="text-emerald-900"] { color: var(--success-text); }
+
+:root [class~="bg-amber-50"],
+:root [class~="bg-amber-50/40"],
+:root [class~="bg-amber-50/50"],
+:root [class~="bg-amber-50/60"],
+:root [class~="bg-amber-50/70"],
+:root [class~="bg-amber-50/80"],
+:root [class~="bg-amber-50/90"],
+:root [class~="bg-amber-100"],
+:root [class~="bg-amber-100/40"],
+:root [class~="bg-amber-100/50"],
+:root [class~="bg-amber-100/60"],
+:root [class~="bg-amber-100/70"],
+:root [class~="bg-amber-100/80"],
+:root [class~="bg-amber-100/90"] { background-color: var(--warning-surface); }
+
+:root [class~="border-amber-100"],
+:root [class~="border-amber-200"],
+:root [class~="border-amber-300"] { border-color: var(--warning-border); }
+
+:root [class~="text-amber-600"],
+:root [class~="text-amber-700"],
+:root [class~="text-amber-800"],
+:root [class~="text-amber-900"] { color: var(--warning-text); }
+
+:root [class~="bg-red-50"],
+:root [class~="bg-red-50/40"],
+:root [class~="bg-red-50/50"],
+:root [class~="bg-red-50/60"],
+:root [class~="bg-red-50/70"],
+:root [class~="bg-red-50/80"],
+:root [class~="bg-red-50/90"],
+:root [class~="bg-red-100"],
+:root [class~="bg-red-100/40"],
+:root [class~="bg-red-100/50"],
+:root [class~="bg-red-100/60"],
+:root [class~="bg-red-100/70"],
+:root [class~="bg-red-100/80"],
+:root [class~="bg-red-100/90"] { background-color: var(--danger-surface); }
+
+:root [class~="border-red-100"],
+:root [class~="border-red-200"],
+:root [class~="border-red-300"] { border-color: var(--danger-border); }
+
+:root [class~="text-red-600"],
+:root [class~="text-red-700"],
+:root [class~="text-red-800"],
+:root [class~="text-red-900"] { color: var(--danger-text); }
+
+:root [class~="bg-blue-50"],
+:root [class~="bg-blue-50/40"],
+:root [class~="bg-blue-50/50"],
+:root [class~="bg-blue-50/60"],
+:root [class~="bg-blue-50/70"],
+:root [class~="bg-blue-50/80"],
+:root [class~="bg-blue-50/90"],
+:root [class~="bg-blue-100"],
+:root [class~="bg-blue-100/40"],
+:root [class~="bg-blue-100/50"],
+:root [class~="bg-blue-100/60"],
+:root [class~="bg-blue-100/70"],
+:root [class~="bg-blue-100/80"],
+:root [class~="bg-blue-100/90"] { background-color: var(--accent-surface); }
+
+:root [class~="border-blue-100"],
+:root [class~="border-blue-200"],
+:root [class~="border-blue-300"] { border-color: var(--accent-border); }
+
+:root [class~="text-blue-600"],
+:root [class~="text-blue-700"],
+:root [class~="text-blue-800"],
+:root [class~="text-blue-900"] { color: var(--accent-text); }

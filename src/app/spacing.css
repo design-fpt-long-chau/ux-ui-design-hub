@@ -1,0 +1,84 @@
+/* Shared layout rhythm, based on Tailwind's existing 4px spacing unit. */
+:root {
+  --layout-gutter: calc(var(--spacing) * 6);
+  --layout-section: calc(var(--spacing) * 8);
+  --layout-gap: calc(var(--spacing) * 4);
+  --layout-card-padding: calc(var(--spacing) * 4);
+  --layout-page-padding: calc(var(--spacing) * 6);
+}
+@media (min-width: 1280px) { :root { --layout-gutter: calc(var(--spacing) * 8); } }
+.library-gutter, .library-page { padding-inline: var(--layout-gutter); }
+.library-page { width: 100%; max-width: none; padding-block: var(--layout-page-padding); }
+.library-page h1 + p { margin-top: calc(var(--spacing) * 2); }
+.library-card-grid { column-gap: var(--layout-gap); row-gap: calc(var(--spacing) * 6); }
+.library-card-padding { padding: var(--layout-card-padding); }
+/* Horizontal overflow also clips vertically. Reserve paint space for card
+   borders, focus outlines and hover shadows without changing card dimensions. */
+.library-scroll-rail { padding-block: calc(var(--spacing) * 2) calc(var(--spacing) * 3); }
+.library-scroll-rail .interactive-card:focus-visible { outline-offset: -2px; }
+/* Collapsible sections still mask their content during animation, but must not
+   shave off the focus outline on the first/last control in an open section. */
+.motion-collapse { overflow-clip-margin: var(--spacing); }
+.library-page > section + section { margin-top: var(--layout-section); }
+.library-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--layout-gap); }
+.library-toolbar > :last-child { margin-left: auto; }
+.library-dialog-padding { padding: calc(var(--spacing) * 6); }
+/* Add/Edit's header, stepper, body and footer use the same inset. */
+.add-screen-dialog { --dialog-gutter: calc(var(--spacing) * 6); }
+.add-screen-dialog > :is(header, nav, footer),
+.add-screen-dialog .add-screen-content { padding-inline: var(--dialog-gutter); }
+.add-screen-dialog .add-screen-content { padding-block: calc(var(--spacing) * 6); }
+.add-screen-form-grid { column-gap: var(--layout-gap); row-gap: var(--layout-gap); }
+.library-field-grid { gap: var(--layout-gap); }
+/* Breadcrumbs wrap inside narrow Detail headers instead of competing with tools. */
+nav[aria-label="Breadcrumb"] { flex-wrap: wrap; row-gap: calc(var(--spacing) * 1); min-width: 0; }
+@media (max-width: 767px) {
+  :root { --layout-gutter: calc(var(--spacing) * 4); }
+  .add-screen-dialog { --dialog-gutter: calc(var(--spacing) * 4); }
+}
+
+@media (max-width: 1280px) { .library-metadata-panel { width: 280px; } }
+/* Edge tooltips stay within the navigator, avoiding invisible horizontal overflow. */
+.flow-position-step:first-child .flow-position-tooltip { left: 0; transform: translateY(4px); }
+.flow-position-step:last-child .flow-position-tooltip { left: auto; right: 0; transform: translateY(4px); }
+.flow-position-step:is(:first-child, :last-child) a:is(:hover, :focus-visible) .flow-position-tooltip { transform: translateY(0); }
+
+/* Detail uses the available app canvas, accounting for both persistent sidebars. */
+.screen-detail-content {
+  width: 100%;
+  max-width: min(88vw, 1680px);
+  min-width: 0;
+  margin-inline: auto;
+  container-type: inline-size;
+}
+.figma-source-status { margin-bottom: calc(var(--spacing) * 6); }
+.screen-detail-content .flow-position-navigator {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  margin-bottom: calc(var(--spacing) * 6);
+}
+.figma-compare-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--layout-gap);
+}
+.figma-compare-grid > figure { min-width: 0; }
+.figma-compare-image {
+  display: block;
+  margin-inline: auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: clamp(420px, 50vw, 720px);
+  object-fit: contain;
+}
+/* Two columns only when both the viewport and the actual content area allow it. */
+@media (min-width: 1024px) {
+  @container (min-width: 560px) {
+    .figma-compare-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+}
+@media (min-width: 1440px) {
+  .figma-compare-grid { gap: calc(var(--spacing) * 6); }
+}

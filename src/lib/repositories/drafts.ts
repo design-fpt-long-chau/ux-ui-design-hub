@@ -1,0 +1,57 @@
+import type { ContextualAnnotation } from "@/types/design-library";
+export interface RepresentationDraft {
+  id: string;
+  type: "state" | "variant";
+  stateType?: string;
+  name: string;
+  preview?: string;
+  description?: string;
+  order: number;
+  isDefault?: boolean;
+}
+export interface ScreenDraft {
+  sourceType?: "figma" | "upload";
+  figmaSource?: import("@/types/design-library").FigmaSource;
+  businessUnitId: string;
+  screenGroupId: string;
+  name: string;
+  mobile: boolean;
+  web: boolean;
+  mobilePlatform: "iOS" | "Android" | "Mobile Web";
+  mobilePreview?: string;
+  webPreview?: string;
+  description: string;
+  whenItAppears: string;
+  purpose: string;
+  uploadedBy: string;
+  status: "active" | "coming-soon" | "unavailable";
+  stagedPreview?: string;
+  stagedFileName?: string;
+  stagedFileSize?: number;
+  stagedWidth?: number;
+  stagedHeight?: number;
+  suggestedPlatform?: "mobile" | "web";
+  platformSelectionSource?: "auto" | "manual";
+  jiraTicket?: string;
+  relatedTickets?: string;
+  figmaHref?: string;
+  version?: string;
+  versionStatus?: "current" | "archived";
+  components?: string;
+  verification?: "Unverified" | "Internal Verified" | "Figma Verified" | "Production Verified" | "Public Verified";
+  verifiedBy?: string;
+  lastVerified?: string;
+  evidenceSource?: string;
+  evidenceNotes?: string;
+  platformManuallySelected?: boolean;
+  flowMode?: "none" | "existing" | "new";
+  flowId?: string;
+  insertAfterScreenId?: string | null;
+  newFlowName?: string;
+  newFlowDescription?: string;
+  mobileAnnotations?: ContextualAnnotation[];
+  webAnnotations?: ContextualAnnotation[];
+  mobileRepresentations?: RepresentationDraft[];
+  webRepresentations?: RepresentationDraft[];
+  currentStep?: "source" | "information" | "compose" | "review" | "representations" | "flow" | "annotations";
+}
